@@ -1,0 +1,17 @@
+{
+  "config_id": 2,
+  "n_layers": 3,
+  "width": 16,
+  "activation": "relu",
+  "learning_rate": 0.003,
+  "batch_size": 64,
+  "l2": 0.001,
+  "log_inputs": true,
+  "fold": 4,
+  "validation_rmsle": 0.3206396957065864,
+  "training_rmsle_at_best_epoch": 0.2597514172087336,
+  "best_epoch": 39,
+  "epochs_run": 89,
+  "hit_epoch_limit": false,
+  "seconds": 1.209264103999999
+}

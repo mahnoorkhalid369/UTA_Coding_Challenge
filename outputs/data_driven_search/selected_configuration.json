@@ -1,0 +1,30 @@
+{
+  "candidate": {
+    "config_id": 2,
+    "n_layers": 3,
+    "width": 16,
+    "activation": "relu",
+    "learning_rate": 0.003,
+    "batch_size": 64,
+    "l2": 0.001,
+    "log_inputs": true
+  },
+  "mean_validation_rmsle": 0.2996851064597833,
+  "std_validation_rmsle": 0.01647421259385413,
+  "std_definition": "sample standard deviation across five folds (ddof=1)",
+  "fold_best_epochs": [
+    31,
+    123,
+    89,
+    39,
+    78
+  ],
+  "proposed_final_refit_epochs": 78,
+  "refit_rule": "Median of selected configuration's five best epochs; no test data used",
+  "training_seconds_total": 293.20106923099917,
+  "current_invocation_seconds": 294.289341832,
+  "completed_fits": 100,
+  "final_refit_performed": false,
+  "test_evaluated": false,
+  "selected_folds_hitting_epoch_limit": 0
+}

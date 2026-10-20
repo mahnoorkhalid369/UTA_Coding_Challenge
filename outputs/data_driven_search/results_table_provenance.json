@@ -1,0 +1,9 @@
+{
+  "input_file": "fold_results.csv",
+  "input_sha256": "03c7c858cf336eb41c0f1b657cdde615f7cab33696a6c120eab6ef29ca87000e",
+  "generated_by": "train_data_driven.save_results_table",
+  "rows": 20,
+  "fold_scores_per_candidate": 5,
+  "training_source_snapshot_matches_manifest": true,
+  "test_evaluated": false
+}

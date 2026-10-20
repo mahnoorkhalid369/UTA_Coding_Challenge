@@ -1,0 +1,17 @@
+{
+  "config_id": 3,
+  "n_layers": 1,
+  "width": 32,
+  "activation": "tanh",
+  "learning_rate": 0.001,
+  "batch_size": 128,
+  "l2": 1e-05,
+  "log_inputs": true,
+  "fold": 4,
+  "validation_rmsle": 0.32683838615863825,
+  "training_rmsle_at_best_epoch": 0.28180347178067156,
+  "best_epoch": 395,
+  "epochs_run": 445,
+  "hit_epoch_limit": false,
+  "seconds": 2.2993563260000656
+}

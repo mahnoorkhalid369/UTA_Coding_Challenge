@@ -1,0 +1,62 @@
+{
+  "seed": 42,
+  "n_configs": 20,
+  "n_folds": 5,
+  "search_strategy": "random_without_replacement",
+  "selection_metric": "mean_validation_rmsle_base10_log1p",
+  "target_transform": "log10",
+  "log_features": [
+    "x1",
+    "x2",
+    "x4",
+    "x5",
+    "x6"
+  ],
+  "optimizer": {
+    "name": "adam",
+    "epsilon": 1e-07,
+    "beta_1": 0.9,
+    "beta_2": 0.999
+  },
+  "training": {
+    "max_epochs": 1000,
+    "patience": 50,
+    "min_delta": 1e-05
+  },
+  "search_space": {
+    "n_layers": [
+      1,
+      2,
+      3
+    ],
+    "width": [
+      16,
+      32,
+      64
+    ],
+    "activation": [
+      "relu",
+      "tanh"
+    ],
+    "learning_rate": [
+      0.0003,
+      0.001,
+      0.003
+    ],
+    "batch_size": [
+      32,
+      64,
+      128
+    ],
+    "l2": [
+      0.0,
+      1e-05,
+      0.0001,
+      0.001
+    ],
+    "log_inputs": [
+      true,
+      false
+    ]
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "configuration": {
+    "seed": 42,
+    "n_configs": 20,
+    "n_folds": 5,
+    "search_strategy": "random_without_replacement",
+    "selection_metric": "mean_validation_rmsle_base10_log1p",
+    "target_transform": "log10",
+    "log_features": [
+      "x1",
+      "x2",
+      "x4",
+      "x5",
+      "x6"
+    ],
+    "optimizer": {
+      "name": "adam",
+      "epsilon": 1e-07,
+      "beta_1": 0.9,
+      "beta_2": 0.999
+    },
+    "training": {
+      "max_epochs": 1000,
+      "patience": 50,
+      "min_delta": 1e-05
+    },
+    "search_space": {
+      "n_layers": [
+        1,
+        2,
+        3
+      ],
+      "width": [
+        16,
+        32,
+        64
+      ],
+      "activation": [
+        "relu",
+        "tanh"
+      ],
+      "learning_rate": [
+        0.0003,
+        0.001,
+        0.003
+      ],
+      "batch_size": [
+        32,
+        64,
+        128
+      ],
+      "l2": [
+        0.0,
+        1e-05,
+        0.0001,
+        0.001
+      ],
+      "log_inputs": [
+        true,
+        false
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "config_id": 1,
+      "n_layers": 3,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.003,
+      "batch_size": 32,
+      "l2": 0.0001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 2,
+      "n_layers": 3,
+      "width": 16,
+      "activation": "relu",
+      "learning_rate": 0.003,
+      "batch_size": 64,
+      "l2": 0.001,
+      "log_inputs": true
+    },
+    {
+      "config_id": 3,
+      "n_layers": 1,
+      "width": 32,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 128,
+      "l2": 1e-05,
+      "log_inputs": true
+    },
+    {
+      "config_id": 4,
+      "n_layers": 3,
+      "width": 64,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "l2": 0.0,
+      "log_inputs": true
+    },
+    {
+      "config_id": 5,
+      "n_layers": 3,
+      "width": 32,
+      "activation": "tanh",
+      "learning_rate": 0.0003,
+      "batch_size": 32,
+      "l2": 0.001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 6,
+      "n_layers": 3,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 128,
+      "l2": 0.0001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 7,
+      "n_layers": 1,
+      "width": 32,
+      "activation": "relu",
+      "learning_rate": 0.0003,
+      "batch_size": 128,
+      "l2": 0.0001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 8,
+      "n_layers": 1,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 128,
+      "l2": 0.0,
+      "log_inputs": false
+    },
+    {
+      "config_id": 9,
+      "n_layers": 2,
+      "width": 64,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 128,
+      "l2": 0.0001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 10,
+      "n_layers": 2,
+      "width": 32,
+      "activation": "tanh",
+      "learning_rate": 0.0003,
+      "batch_size": 64,
+      "l2": 0.001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 11,
+      "n_layers": 2,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.003,
+      "batch_size": 32,
+      "l2": 1e-05,
+      "log_inputs": true
+    },
+    {
+      "config_id": 12,
+      "n_layers": 1,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "l2": 0.001,
+      "log_inputs": true
+    },
+    {
+      "config_id": 13,
+      "n_layers": 2,
+      "width": 32,
+      "activation": "relu",
+      "learning_rate": 0.0003,
+      "batch_size": 32,
+      "l2": 0.001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 14,
+      "n_layers": 3,
+      "width": 32,
+      "activation": "tanh",
+      "learning_rate": 0.0003,
+      "batch_size": 128,
+      "l2": 0.0001,
+      "log_inputs": true
+    },
+    {
+      "config_id": 15,
+      "n_layers": 1,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.003,
+      "batch_size": 32,
+      "l2": 0.0,
+      "log_inputs": false
+    },
+    {
+      "config_id": 16,
+      "n_layers": 3,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.0003,
+      "batch_size": 64,
+      "l2": 0.0001,
+      "log_inputs": true
+    },
+    {
+      "config_id": 17,
+      "n_layers": 3,
+      "width": 32,
+      "activation": "relu",
+      "learning_rate": 0.0003,
+      "batch_size": 32,
+      "l2": 0.001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 18,
+      "n_layers": 2,
+      "width": 16,
+      "activation": "tanh",
+      "learning_rate": 0.003,
+      "batch_size": 64,
+      "l2": 0.0,
+      "log_inputs": false
+    },
+    {
+      "config_id": 19,
+      "n_layers": 3,
+      "width": 16,
+      "activation": "relu",
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "l2": 0.001,
+      "log_inputs": false
+    },
+    {
+      "config_id": 20,
+      "n_layers": 2,
+      "width": 32,
+      "activation": "tanh",
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "l2": 0.0001,
+      "log_inputs": false
+    }
+  ],
+  "workbook_sha256": "7edc810c13e0beef02cfee98fc178a3bf6c9e1375e50ef766b561a009368a000",
+  "assignments_sha256": "69ccbd74c369eb77607a79c16cc462fc57f7a6765207bf1b280848846a50022d",
+  "implementation_sha256": "fed4904d3012ff50a23b6df0f202134a7d22f028649862be555eaa8149714c37",
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0"
+  },
+  "device": "cpu",
+  "threads": 1,
+  "test_evaluated": false
+}
