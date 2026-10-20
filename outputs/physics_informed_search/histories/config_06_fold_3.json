@@ -1,0 +1,28 @@
+{
+  "config_id": 6,
+  "m_hidden_sizes": [
+    16,
+    8
+  ],
+  "m_inputs": "x1_x2",
+  "learning_rate": 0.0003,
+  "lambda_physics": 1.0,
+  "fold": 3,
+  "best_epoch": 300,
+  "epochs_run": 350,
+  "seconds": 7.814099275999979,
+  "hit_epoch_limit": false,
+  "training_rmsle": 0.3195742146604455,
+  "training_data_loss": 0.6818746328353882,
+  "training_physics_loss": 0.1020035445690155,
+  "m_mean": 2.9620487689971924,
+  "m_median": 2.6133081912994385,
+  "m_std": 2.663957118988037,
+  "m_q10": 0.012050666846334934,
+  "m_q90": 6.963428497314453,
+  "m_min": 0.00047004641965031624,
+  "m_max": 9.217094421386719,
+  "validation_rmsle": 0.3043292577748276,
+  "validation_data_loss": 0.5902170538902283,
+  "validation_physics_loss": 0.09418011456727982
+}

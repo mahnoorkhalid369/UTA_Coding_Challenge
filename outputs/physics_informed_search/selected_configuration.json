@@ -1,0 +1,113 @@
+{
+  "candidate": {
+    "config_id": 13,
+    "m_hidden_sizes": [
+      16
+    ],
+    "m_inputs": "x1_x2",
+    "learning_rate": 0.003,
+    "lambda_physics": 0.01
+  },
+  "configuration": {
+    "seed": 42,
+    "n_configs": 20,
+    "n_folds": 5,
+    "search_strategy": "random_without_replacement",
+    "partition_assignments": "outputs/partitions/partition_assignments.csv",
+    "output_dir": "outputs/physics_informed_search",
+    "backbone_source_config_id": 2,
+    "backbone": {
+      "n_layers": 3,
+      "width": 16,
+      "activation": "relu",
+      "batch_size": 64,
+      "l2": 0.001,
+      "log_inputs": true
+    },
+    "log_features": [
+      "x1",
+      "x2",
+      "x4",
+      "x5",
+      "x6"
+    ],
+    "target_transform": "log10",
+    "optimizer": {
+      "name": "adam",
+      "epsilon": 1e-07,
+      "beta_1": 0.9,
+      "beta_2": 0.999
+    },
+    "training": {
+      "max_epochs": 1000,
+      "patience": 50,
+      "min_delta": 1e-05
+    },
+    "exponent_network": {
+      "activation": "tanh",
+      "output": "softplus"
+    },
+    "search_space": {
+      "m_hidden_sizes": [
+        [
+          8
+        ],
+        [
+          16
+        ],
+        [
+          16,
+          8
+        ]
+      ],
+      "m_inputs": [
+        "x1_x2",
+        "all"
+      ],
+      "learning_rate": [
+        0.0003,
+        0.001,
+        0.003
+      ],
+      "lambda_physics": [
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "loss": {
+      "data": "mean squared error in log10(y)",
+      "physics": "mean squared difference between predicted and physical log10(y)",
+      "regularization": "l2 * sum of squared weight matrices of both networks; biases excluded"
+    },
+    "selection_metric": "mean_validation_rmsle_base10_log1p",
+    "m_diagnostics": {
+      "inputs": "fixed training rows; never test rows",
+      "statistics": [
+        "mean",
+        "median",
+        "std",
+        "q10",
+        "q90"
+      ]
+    },
+    "status": "planned_not_trained"
+  },
+  "mean_validation_rmsle": 0.29857423831516144,
+  "std_validation_rmsle": 0.015088697024089262,
+  "fold_best_epochs": [
+    43,
+    116,
+    133,
+    44,
+    193
+  ],
+  "proposed_final_refit_epochs": 116,
+  "refit_rule": "Median of five selected best epochs; no test data used",
+  "training_seconds_total": 546.8660784689937,
+  "search_invocation_seconds": 548.8062172909995,
+  "completed_fits": 100,
+  "test_evaluated": false,
+  "selected_folds_hitting_epoch_limit": 0
+}

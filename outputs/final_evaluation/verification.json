@@ -1,0 +1,11 @@
+{
+  "all_1865_sample_ids_preserved": true,
+  "train_test_predictor_groups_disjoint": true,
+  "all_predictions_and_exponents_positive_finite": true,
+  "r2_independently_matches_sklearn": true,
+  "base10_rmsle_matches_sklearn_log_error_conversion": true,
+  "saved_final_checkpoints_reproduce_predictions": true,
+  "inference_works_without_target_column": true,
+  "final_scalers_match_training_only_statistics": true,
+  "required_figures_present": true
+}

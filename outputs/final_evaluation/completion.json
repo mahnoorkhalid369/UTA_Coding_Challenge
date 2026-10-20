@@ -1,0 +1,10 @@
+{
+  "final_models_refitted": true,
+  "test_evaluation_completed": true,
+  "test_used_for_selection": false,
+  "selections_changed_after_test": false,
+  "all_predictions_positive_finite": true,
+  "all_exponents_positive_finite": true,
+  "training_samples": 1493,
+  "testing_samples": 372
+}

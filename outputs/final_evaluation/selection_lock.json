@@ -1,0 +1,10 @@
+{
+  "data_driven_selection_sha256": "c0381243139b266abd66a751c7c39c7f1366116943c04e5ef87f434a0940a9c4",
+  "physics_selection_sha256": "d3146db3028b129b03d4b6be2e68b8759ee792ff6fc9a9390c42b2a1e62a980e",
+  "workbook_sha256": "7edc810c13e0beef02cfee98fc178a3bf6c9e1375e50ef766b561a009368a000",
+  "assignments_sha256": "69ccbd74c369eb77607a79c16cc462fc57f7a6765207bf1b280848846a50022d",
+  "data_driven_epochs": 78,
+  "physics_informed_epochs": 116,
+  "refit_seed": 42,
+  "duration_rule": "Median selected CV best epochs; no early stopping or test monitoring in refit"
+}

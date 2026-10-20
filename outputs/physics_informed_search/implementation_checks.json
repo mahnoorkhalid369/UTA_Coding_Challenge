@@ -1,0 +1,10 @@
+{
+  "original_equation_matches_log_form": true,
+  "positive_finite_predictions_and_m": true,
+  "predictor_physics_gradient_l1": 210.27569580078125,
+  "exponent_physics_gradient_l1": 3.941526025533676,
+  "m_physics_gradient_l1": 0.8023614287376404,
+  "test_data_used": false,
+  "training_observations_above_positive_m_upper_bound": 359,
+  "training_observations": 1493
+}
