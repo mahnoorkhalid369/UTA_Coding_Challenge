@@ -1,5 +1,18 @@
 # Coding challenge: preprocessing
 
+## All-in-one Colab notebook
+
+Open `UTA_Coding_Challenge.ipynb` in Google Colab and run its cells in order.
+Upload the supplied `Database.xls` when prompted. The notebook includes all
+completed preprocessing and splitting code, generates the Word progress report
+under `reports/`, and packages the results as `challenge_progress.zip` for download.
+Outputs are organized under `outputs/preprocessing/` and `outputs/partitions/`.
+Download them before closing a temporary Colab runtime. Model configuration and
+training will be added in later steps. The analysis/report cells were validated
+in the cloud workspace; Colab's interactive upload/download flow is not yet tested.
+
+The standalone Python scripts below remain available for command-line use.
+
 Run with Python 3.12 from this directory:
 
 ```sh
