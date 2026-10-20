@@ -15,6 +15,11 @@ before test evaluation. Notebook code was exercised in the cloud workspace; Cola
 
 The standalone Python scripts below remain available for command-line use.
 
+Notebook sections: **A** shared data/metrics, **B** data-driven model,
+**C** physics-informed model, **D** final comparison, **E** references, **F** export.
+Physics-specific code is separated into architecture/equation (C2), joint training
+(C3), and gradient/equation checks (C4). Shared imports and helpers are defined once.
+
 Run with Python 3.12 from this directory:
 
 ```sh
