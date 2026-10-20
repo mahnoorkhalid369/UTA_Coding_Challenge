@@ -14,7 +14,7 @@ import pandas as pd
 import torch
 from sklearn.preprocessing import StandardScaler
 
-from preprocess import FEATURES, load_workbook
+from preprocess import load_workbook
 from create_partitions import validate_assignments
 from train_data_driven import build_network, input_values, rmsle_base10
 
@@ -160,7 +160,6 @@ def validate_physics_implementation(training, config):
     scaler = StandardScaler().fit(input_values(subset, config["backbone"], config))
     x = torch.tensor(scaler.transform(input_values(subset, config["backbone"], config)), dtype=torch.float32)
     z, m = model(x)
-    physical = physical_log10(subset, m)
     # Independently evaluate the original equation for fixed positive exponents.
     fixed = np.linspace(.2, 3., len(subset))
     direct = subset.x2.to_numpy() ** 2 / (72.2 * subset.x1.to_numpy() ** (-fixed))

@@ -1,0 +1,73 @@
+{
+  "executed_code_cells": [
+    3,
+    5,
+    6,
+    8,
+    9,
+    11,
+    14,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    25,
+    28,
+    30,
+    32,
+    34,
+    35,
+    37,
+    40,
+    42,
+    43,
+    45,
+    46,
+    48,
+    49
+  ],
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "xlrd": "2.0.1",
+    "matplotlib": "3.10.8",
+    "torch": "2.14.1"
+  },
+  "elapsed_seconds": 873.4585978270006,
+  "search_checks": {
+    "data_driven_search": {
+      "fits": 100,
+      "all_fold_scores_match_atol": 1e-12,
+      "best_and_stopping_epochs_identical": true
+    },
+    "physics_informed_search": {
+      "fits": 100,
+      "all_fold_scores_match_atol": 1e-12,
+      "best_and_stopping_epochs_identical": true
+    }
+  },
+  "partition_assignments_identical": true,
+  "final_predictions_identical_atol": 1e-12,
+  "final_comparison_table_identical": true,
+  "report_generation_in_notebook": false,
+  "colab_interactive_upload_tested": false,
+  "hyperparameters_changed": false,
+  "purpose": "Reproduction of fixed experiment; no model selection changes after test inspection",
+  "executed_notebook_sha256": "bac040a2234c42f4e5ba6ab648a1c94f60239ca7092e9b84143a7eaa0109afe8",
+  "reviewed_notebook_sha256": "18b55a8a026bc0ba96b3f64c42f45368d924cdb515bfb93f39df19e80f8aa88a",
+  "post_execution_cleanup": [
+    "Remove unused calculation/imports",
+    "Remove stale configuration lifecycle metadata",
+    "No changes to models, objectives, hyperparameters, seeds, or selections"
+  ],
+  "maximum_fold_score_difference": {
+    "data_driven_search": 0.0,
+    "physics_informed_search": 0.0
+  },
+  "maximum_final_prediction_and_m_difference": 0.0,
+  "static_analysis": "Pyflakes: no undefined names or unused imports/locals in the extracted notebook and all five analysis scripts",
+  "pdf_pages": 3
+}

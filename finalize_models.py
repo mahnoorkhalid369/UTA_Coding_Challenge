@@ -17,7 +17,7 @@ from sklearn.preprocessing import StandardScaler
 from preprocess import load_workbook
 from create_partitions import validate_assignments
 from train_data_driven import build_network, input_values, rmsle_base10
-from train_physics_informed import PhysicsInformedNetwork, physics_fit, physical_log10, exponent_statistics
+from train_physics_informed import physics_fit, physical_log10, exponent_statistics
 
 
 def original_scale_metrics(y, prediction):
