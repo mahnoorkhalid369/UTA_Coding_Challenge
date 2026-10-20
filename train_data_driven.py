@@ -174,6 +174,35 @@ def save_results_table(results, output):
     return table
 
 
+def plot_selected_folds(output, selection):
+    """Show all five selected-candidate runs without averaging unaligned epochs."""
+    output = Path(output)
+    candidate_id = selection["candidate"]["config_id"]
+    figure, axes = plt.subplots(2, 3, figsize=(12, 6.5), sharex=True, sharey=True)
+    for fold, axis in enumerate(axes.flat[:5], start=1):
+        curve = pd.read_csv(output / "histories" / f"config_{candidate_id:02d}_fold_{fold}.csv")
+        best_row = curve.loc[curve.validation_rmsle.idxmin()]
+        axis.plot(curve.epoch, curve.training_rmsle, label="Training", linewidth=1.2)
+        axis.plot(curve.epoch, curve.validation_rmsle, label="Validation", linewidth=1.2)
+        axis.axvline(best_row.epoch, color="gray", linestyle="--", label="Selected epoch")
+        axis.set_title(f"Fold {fold}: best epoch {int(best_row.epoch)}")
+        axis.set_xlabel("Epoch")
+        axis.set_ylabel("RMSLE (base 10, log1p)")
+        axis.tick_params(labelbottom=True, labelleft=True)
+    axes.flat[5].axis("off")
+    handles, labels = axes.flat[0].get_legend_handles_labels()
+    axes.flat[5].legend(handles, labels, loc="center", frameon=False)
+    axes.flat[5].text(0.5, 0.24,
+        f"Configuration {candidate_id}\nFive-fold validation RMSLE\n"
+        f"{selection['mean_validation_rmsle']:.5f} ± {selection['std_validation_rmsle']:.5f}",
+        ha="center", va="center", transform=axes.flat[5].transAxes)
+    figure.suptitle("Selected data-driven network: all five cross-validation folds")
+    figure.tight_layout(rect=(0, 0, 1, 0.95))
+    figure.savefig(output / "selected_all_folds_learning_curves.png", dpi=180)
+    figure.savefig(output / "selected_all_folds_learning_curves.pdf")
+    plt.close(figure)
+
+
 def run_search(workbook, assignments_path, config, output):
     torch.set_num_threads(1)
     torch.use_deterministic_algorithms(True)
@@ -280,6 +309,7 @@ def run_search(workbook, assignments_path, config, output):
     figure.tight_layout()
     figure.savefig(output / "selected_fold_1_learning_curve.png", dpi=180)
     plt.close(figure)
+    plot_selected_folds(output, selection)
     print(json.dumps(selection, indent=2), flush=True)
     return ranking, selection
 

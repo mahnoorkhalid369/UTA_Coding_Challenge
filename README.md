@@ -105,6 +105,11 @@ refitted on all training data. The predeclared final-refit duration is the media
 of the selected candidate's five best epochs; refitting and test evaluation are
 deferred. Selection scores are not an independent generalization estimate.
 
+`selected_all_folds_learning_curves.png` and its PDF version display training and
+validation RMSLE for all five folds of the selected configuration, on shared axes.
+Dashed lines identify each fold's selected epoch. Curves end when that fold stops;
+unequal-length runs are not padded or averaged. The notebook displays this figure.
+
 The code also generates `configuration_results.csv` and `configuration_results.md`:
 one row per candidate with all hyperparameters, five fold RMSLE values, mean,
 sample standard deviation, rank, selected status, and training time. The notebook
