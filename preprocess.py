@@ -68,16 +68,27 @@ def prepare(path, output):
     output.mkdir(parents=True, exist_ok=True)
     groups = df.groupby("predictor_group")
     audit = {
+        # Total number of observations.
         "samples": len(df),
+        # Names of the nine model input columns.
         "predictors": FEATURES,
+        # Total number of missing cells across all columns.
         "missing_cells": int(df.isna().sum().sum()),
+        # Total number of NaN or positive/negative infinity cells.
         "nonfinite_cells": int((~np.isfinite(df.to_numpy())).sum()),
+        # Number of distinct combinations of all nine input features.
         "unique_predictor_groups": int(groups.ngroups),
+        # All rows sharing their feature combination with another row, including the first.
         "rows_in_repeated_predictor_groups": int(df.duplicated(FEATURES, keep=False).sum()),
+        # Rows repeating a feature combination after its first occurrence.
         "extra_rows_with_repeated_predictors": int(df.duplicated(FEATURES).sum()),
+        # Feature groups containing more than one distinct target value.
         "groups_with_different_targets": int((groups.y.nunique() > 1).sum()),
+        # Extra rows with identical features AND target, ignoring sample ID.
         "repeated_records_excluding_id": int(df.duplicated(FEATURES + ["y"]).sum()),
+        # No observations are removed by this preprocessing step.
         "removed_rows": 0,
+        # Scaling is deferred until training partitions have been constructed.
         "scaling_fitted": False,
     }
     df.to_csv(output / "validated_data.csv", index=False, float_format="%.17g")
