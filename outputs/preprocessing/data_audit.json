@@ -1,0 +1,23 @@
+{
+  "samples": 1865,
+  "predictors": [
+    "x1",
+    "x2",
+    "x3",
+    "x4",
+    "x5",
+    "x6",
+    "x7",
+    "x8",
+    "x9"
+  ],
+  "missing_cells": 0,
+  "nonfinite_cells": 0,
+  "unique_predictor_groups": 1859,
+  "rows_in_repeated_predictor_groups": 12,
+  "extra_rows_with_repeated_predictors": 6,
+  "groups_with_different_targets": 4,
+  "repeated_records_excluding_id": 2,
+  "removed_rows": 0,
+  "scaling_fitted": false
+}
