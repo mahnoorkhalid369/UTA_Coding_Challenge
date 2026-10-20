@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "holdout_method": "GroupShuffleSplit(test_size=0.2)",
+  "fold_method": "GroupKFold(n_splits=5, shuffle=True)",
+  "group_definition": "Exact equality of x1 through x9; target excluded",
+  "total_samples": 1865,
+  "training_samples": 1493,
+  "testing_samples": 372,
+  "training_fraction": 0.8005361930294906,
+  "testing_fraction": 0.1994638069705094,
+  "training_groups": 1487,
+  "testing_groups": 372,
+  "folds": [
+    {
+      "fold": 1,
+      "training_samples": 1195,
+      "validation_samples": 298
+    },
+    {
+      "fold": 2,
+      "training_samples": 1195,
+      "validation_samples": 298
+    },
+    {
+      "fold": 3,
+      "training_samples": 1193,
+      "validation_samples": 300
+    },
+    {
+      "fold": 4,
+      "training_samples": 1193,
+      "validation_samples": 300
+    },
+    {
+      "fold": 5,
+      "training_samples": 1196,
+      "validation_samples": 297
+    }
+  ],
+  "checks": {
+    "all_samples_assigned_once": true,
+    "no_train_test_group_overlap": true,
+    "no_cross_fold_group_overlap": true,
+    "reproducible_assignments": true
+  },
+  "scaling_fitted": false,
+  "models_trained": false
+}

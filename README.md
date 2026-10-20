@@ -36,3 +36,26 @@ this equation. Model evaluation and tuning have not yet been performed.
 
 This preprocessing implementation and documentation were prepared with OpenAI
 Codex assistance. Review and disclose this contribution in the final submission.
+
+## Shared train/test split and validation folds
+
+```sh
+python create_partitions.py /path/to/Database.xls
+```
+
+`outputs/partitions/partition_assignments.csv` links each sample ID and predictor
+group to `train` or `test`. Training rows have a `validation_fold` from 1 to 5;
+test rows have a blank fold. Use these same saved assignments for both models.
+Join by ID rather than assuming row order when loading assignments later.
+
+The holdout uses `GroupShuffleSplit(test_size=0.2, random_state=42)`: the 20%
+fraction applies to distinct predictor groups, so sample fractions can differ
+slightly from 80/20. Within training, `GroupKFold(n_splits=5, shuffle=True,
+random_state=42)` creates group-disjoint folds. Neither operation uses target
+values. `partition_summary.json` records actual sample counts and checks for
+complete coverage, group separation, and deterministic regeneration.
+
+For validation fold k, use training-partition rows with `validation_fold != k`
+for fitting and those with `validation_fold == k` for validation. Fit a fresh
+`FoldPreprocessor` on those fitting rows only. Test rows are excluded throughout
+cross-validation. This step neither fits scaling nor trains a model.
